@@ -106,7 +106,7 @@ const getUserPostsController=async(req,res)=>{
 const deleteMyProfile=async(req,res)=>{
     try{
         const curUserId=req._id;
-        const curUser=await findById(curUserId);
+        const curUser=await User.findById(curUserId);
     
         // delete all posts
         await Post.deleteMany({
@@ -116,7 +116,7 @@ const deleteMyProfile=async(req,res)=>{
         // removed myself from followers,followings    
     
         curUser.followers.forEach(async(followingId)=>{
-            const follower=await User.findById(followingId);
+            const follower=await User.findById(followingId);            
             const index=follower.followings.indexOf(curUserId);
             follower.followings.splice(index,1);
             await follower.save()
@@ -125,8 +125,8 @@ const deleteMyProfile=async(req,res)=>{
         // removed myself from followings,followers
         curUser.followings.forEach(async(followingId)=>{
             const following=await User.findById(followingId);
-            const index=following.follower.indexOf(curUserId);
-            following.follower.splice(index,1);
+            const index=following.followers.indexOf(curUserId);
+            following.followers.splice(index,1);
             await following.save()
         })
     
