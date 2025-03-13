@@ -27,7 +27,7 @@ app.use(express.json({limit:"10mb"}))
 app.use(cookieParser())
 app.use(cors({
     credentials:true,
-    origin:"https://social-media-client-a3xa.onrender.com/"
+    origin:"https://social-media-client-a3xa.onrender.com"
 }));
 
 app.use("/auth",authRouter);
