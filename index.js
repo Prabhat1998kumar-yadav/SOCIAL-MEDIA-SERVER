@@ -26,8 +26,8 @@ app.use(express.json({limit:"10mb"}))
 
 app.use(cookieParser())
 app.use(cors({
-    origin: "http://localhost:5173", // Replace with your frontend's URL
-    methods: "GET, POST, PUT, DELETE", // Allow the necessary HTTP methods
+    origin: "https://social-media-client-production.up.railway.app", // Replace with your frontend's URL
+    
     credentials: true, // Enable cookies if you're using sessions or authentication
 }));
 
