@@ -25,12 +25,13 @@ const app=express();
 app.use(express.json({limit:"10mb"}))
 
 app.use(cookieParser())
-let origin="http://localhost:5173"
-if(process.env.NODE_ENV === "production"){
-    origin="https://social-media-client-production.up.railway.app"
-}
+// let origin="http://localhost:5173"
+// if(process.env.NODE_ENV === "production"){
+//     origin="https://social-media-client-production.up.railway.app"
+// }
+
 app.use(cors({
-    origin,    
+    origin:"https://social-media-client-production.up.railway.app",    
     credentials: true, 
 }));
 
