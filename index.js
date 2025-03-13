@@ -26,9 +26,11 @@ app.use(express.json({limit:"10mb"}))
 
 app.use(cookieParser())
 app.use(cors({
-    secure:true,
-    origin:"https://social-media-client-a3xa.onrender.com"
+    origin: "http://localhost:5173", // Replace with your frontend's URL
+    methods: "GET, POST, PUT, DELETE", // Allow the necessary HTTP methods
+    credentials: true, // Enable cookies if you're using sessions or authentication
 }));
+
 
 app.use("/auth",authRouter);
 app.use("/posts",postsRouter);
