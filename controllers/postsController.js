@@ -5,7 +5,8 @@ const { mapPostOutput } = require("../utils/Utils");
 const cloudinary=require("cloudinary").v2
 
 
-const createPostController=async(req,res)=>{
+const 
+createPostController=async(req,res)=>{
     try{
         const {caption,postImg}=req.body;
         if(!caption || !postImg){
