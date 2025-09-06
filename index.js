@@ -27,7 +27,7 @@ app.use(express.json({limit:"10mb"}))
 app.use(cookieParser())
 let origin="http://localhost:5173"
 if(process.env.NODE_ENV === "production"){
-    origin="https://social-media-server-tcfl.onrender.com"
+    origin="https://social-media-client-ybb7.onrender.com"
 }
 
 app.use(cors({
